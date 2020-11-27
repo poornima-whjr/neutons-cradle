@@ -1,6 +1,11 @@
 class Bob{
     constructor(x,y){
-        this.body = Bodies.circle(x,y,25);
+        var options={
+            restitution:1,
+			friction:0,
+			density:0.8
+        }
+        this.body = Bodies.circle(x,y,25,options);
         this.x=x;
         this.y=y;
         this.radius = 25;

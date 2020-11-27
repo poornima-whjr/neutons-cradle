@@ -59,7 +59,12 @@ function draw() {
   bob4.display();
   bob5.display();
   roof.display();
-  
+  chain1.display();
+  chain2.display();
+  chain3.display(); 
+  chain4.display();
+  chain5.display();
+
   drawSprites();
  
 }
@@ -67,7 +72,11 @@ function draw() {
 function keyPressed(){
 	if (keyCode === LEFT_ARROW){
 		console.log(bob1.body.position);
-		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-1,y:-1});
+		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-70,y:-70});
+	}
+	if (keyCode === RIGHT_ARROW){
+		console.log(bob5.body.position);
+		Matter.Body.applyForce(bob5.body,bob5.body.position,{x:70,y:70});
 	}
 }
 

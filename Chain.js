@@ -7,6 +7,8 @@ class Chain{
             bodyB : obj2.body,
             pointB:{x:this.offsetX,y:this.offsetY}    
         }
+        this.bodyA=obj1.body;
+        this.bodyB=obj2.body;
         this.chain = Constraint.create(options);
         World.add(world,this.chain);
         this.offsetX = offsetX;
@@ -16,13 +18,14 @@ class Chain{
 
     display(){
 
-        var pointA = this.bodyA.body.position;
+        var pointA = this.bodyA.position;
+        var pointB = this.bodyB.position;
         var anchorX = this.offsetX;
         var anchorY = this.offsetY;
-
+        
         strokeWeight(3);
-        fill('red');
-        line(pointA.x, pointA.y, anchorX, anchorY);
+        stroke('red');
+        line(pointA.x, pointA.y, pointB.x+anchorX, pointB.y+anchorY);
     }
 
 }
